@@ -3,7 +3,7 @@ Next tram
 
 Wanted to know when the next tram goes? This is the solution. Easy to use webapp showing countdown towards next tram. Works only for Brno, Czech Republic.
 
-Uses [http://idsjmk.cz/odjezdy/](http://idsjmk.cz/odjezdy/) to fetch next tram and [http://worldtimeengine.com](worldtimeengine.com) to get the exact time.
+Uses [http://idsjmk.cz/odjezdy/](http://idsjmk.cz/odjezdy/) to fetch next tram and [worldtimeengine.com](http://worldtimeengine.com) to get the exact time.
 
 Done for [techsquat.com](http://techsquat.com).
 
