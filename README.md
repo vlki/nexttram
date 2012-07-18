@@ -3,13 +3,12 @@ Next tram
 
 Wanted to know when the next tram goes? This is the solution.
 
-Done for techsquat.com
+Done for [techsquat.com](http://techsquat.com)
 
 License
 =======
 
-WTFPL
-http://sam.zoy.org/wtfpl/
+[WTFPL](http://sam.zoy.org/wtfpl/)
 
 Authors
 =======
