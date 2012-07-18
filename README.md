@@ -7,15 +7,20 @@ Uses [http://idsjmk.cz/odjezdy/](http://idsjmk.cz/odjezdy/) to fetch next tram a
 
 Done for [techsquat.com](http://techsquat.com).
 
-Demonstration
--------------
+Well... Show me
+---------------
 
 Next tram from tram stop Tábor (Brno, Czech Republic): [techsquat.com/nexttram](http://techsquat.com/nexttram)
 
-Want to use it?
----------------
+I desperately want to use it!
+-----------------------------
 
-Just change the URL for fetching the next departure time. Yeah, just that. Go! Hush! Change it!
+Yeah, yeah... Just change the URL for fetching the next departure time. Just that. Now go. Hush! Go! Change it!
+
+I love you, guys!
+-----------------
+
+No need. Just buy us a beer next time we meet.
 
 License
 -------
