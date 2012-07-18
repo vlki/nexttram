@@ -1,0 +1,21 @@
+body {
+    font-family: Fredoka One;
+    text-align: center;
+    height: 500px;
+    background-image: url('nexttram-texture.png');
+    background-repeat: repeat;
+}
+
+.title {
+    font-size: 50px;
+    color: #4382E8;
+    text-shadow: 2px 0 2px #000;
+    opacity: 0.8;
+}
+
+.countdown {
+    font-size: 340px;
+    line-height: 430px;
+    text-shadow: -3px 0 4px #006;
+    color: #d12;
+}

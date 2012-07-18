@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link href='nexttram-style.css' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.countdown.js"></script>
+	<script type="text/javascript">
+		var serverTimeSync = function() {
+		    var time = null;
+		    $.ajax({url: 'nexttram-time.php',
+		        async: false,
+		        dataType: 'text',
+		        success: function(html) {
+		        	var html = $(html);
+		        	var fullTimeString = html.find('.date').first().text() + ' ' + html.find('.time').first().text();
+		            time = new Date(fullTimeString);
+		        }, error: function(http, message, exc) {
+		        	alert('Failed to load the server time. Falling back to time of device.');
+		            time = new Date();
+		    }});
+		    return time;
+		}
+
+		var loadNextDepartureTime = function(successCallback) {
+			$.get('nexttram-departure.php', function(html) {
+				var string = $(html).find('table td.cas').first().text();
+				var split = string.split(':');
+
+				successCallback(split[0], split[1]);
+			});
+		}
+
+		$(function() {
+			loadNextDepartureTime(function(nextDepartureTimeHours, nextDepartureTimeMinutes) {
+				var nextDeparture = new Date();
+				nextDeparture.setSeconds(0);
+				nextDeparture.setMinutes(nextDepartureTimeMinutes);
+				nextDeparture.setHours(nextDepartureTimeHours);
+
+				$('#countdown').countdown({
+					until: nextDeparture,
+					compact: true,
+					format: 'MS',
+					description: '',
+					onExpiry: function() {
+						window.location.reload();
+					},
+					serverSync: serverTimeSync
+				});
+			})
+		});
+	</script>
+</head>
+<body>
+	<div class="title">Next tram</div>
+	<div class="countdown" id="countdown"></div>
+</body>
+</html>
