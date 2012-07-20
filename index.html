@@ -35,6 +35,12 @@
 		$(function() {
 			loadNextDepartureTime(function(nextDepartureTimeHours, nextDepartureTimeMinutes) {
 				var nextDeparture = new Date();
+
+				// When next departure is after midnight, update the day
+				if (nextDeparture.getHours() > 0 && nextDepartureTimeHours == 0) {
+					nextDeparture.setDate(nextDeparture.getDate() + 1);
+				}
+
 				nextDeparture.setSeconds(0);
 				nextDeparture.setMinutes(nextDepartureTimeMinutes);
 				nextDeparture.setHours(nextDepartureTimeHours);
